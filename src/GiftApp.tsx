@@ -22,7 +22,6 @@ const GiftApp: FC = () => {
 
       <AddCategory onAddCategory={onAddCategory}></AddCategory>
 
-      <ol>
         {categories.map((category) => (
           <GiftGrid
             key={category}
@@ -30,7 +29,6 @@ const GiftApp: FC = () => {
             onRemoveCategory={onRemoveCategory}
           ></GiftGrid>
         ))}
-      </ol>
     </div>
   )
 }

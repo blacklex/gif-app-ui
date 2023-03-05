@@ -11,7 +11,7 @@ const getGifts = async (category: string) => {
   const response = await fetch(url)
   const { data } = await response.json()
 
-  const images: { id: string, title: string, url: string } = data.map(
+  const images: Array<{ id: string, title: string, url: string }> = data.map(
     (e: {
       id: string
       title: string
@@ -44,9 +44,9 @@ const GiftGrid: FC<GiftGridProps> = ({ category, onRemoveCategory }) => {
     <div className="gif-grid">
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ direction: 'initial', flex: 1 }}>
-          <span style={{ fontSize: '3rem' }}>{category}</span>
+          <span style={{ fontSize: '1.5rem' }}>{category}</span>
         </div>
-        <div style={{ alignSelf: 'center' }}>
+        <div style={{ alignSelf: 'flex-start' }}>
           <button
             onClick={(e) => {
               onRemoveCategory(category)
