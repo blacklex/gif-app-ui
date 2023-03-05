@@ -1,4 +1,4 @@
-# Gift App
+# Gift App - React
 
 
 ## ESLint Guide
