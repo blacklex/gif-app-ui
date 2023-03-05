@@ -1,10 +1,36 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import AddCategory from './components/AddCategory'
+import GiftGrid from './components/GiftGrid'
 import './GiftApp.css'
 
 const GiftApp: FC = () => {
+  const [categories, setCategories] = useState<string[]>([])
+
+  const onAddCategory = (category: string) => {
+    if (!categories.includes(category)) {
+      setCategories([category, ...categories])
+    }
+  }
+
+  const onRemoveCategory = (category: string) => {
+    setCategories(categories.filter((e) => e !== category))
+  }
+
   return (
     <div>
-      <h1>Gift App</h1>
+      <h2>Gift App</h2>
+
+      <AddCategory onAddCategory={onAddCategory}></AddCategory>
+
+      <ol>
+        {categories.map((category) => (
+          <GiftGrid
+            key={category}
+            category={category}
+            onRemoveCategory={onRemoveCategory}
+          ></GiftGrid>
+        ))}
+      </ol>
     </div>
   )
 }
