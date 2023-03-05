@@ -18,6 +18,16 @@ input {
   width: 100%;
 }
 
+button {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgb(97, 32, 158);
+  color: black;
+  font-size: 1.1rem;
+  outline: none;
+  width: 100%;
+}
+
 h2 {
   font-size: 1.5rem;
 }
@@ -46,7 +56,17 @@ h3 {
   justify-content: center;
   margin-bottom: 20px;
   margin-right: 20px;
+  margin-top: 20px;
   overflow: hidden;
+}
+
+.gif-grid {
+  border-radius: 10px;
+  box-shadow: 6px 9px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(97, 32, 158, 0.2);
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 20px;
 }
 
 .card p {
