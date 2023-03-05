@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 import AddCategory from './components/AddCategory'
-import GiftGrid from './components/GiftGrid'
-import './GiftApp.css'
+import GifGrid from './components/GifGrid'
+import './GifApp.css'
 
-const GiftApp: FC = () => {
+const GifApp: FC = () => {
   const [categories, setCategories] = useState<string[]>([])
 
   const onAddCategory = (category: string) => {
@@ -18,19 +18,19 @@ const GiftApp: FC = () => {
 
   return (
     <div>
-      <h2>Gift App</h2>
+      <h2>Gif App</h2>
 
       <AddCategory onAddCategory={onAddCategory}></AddCategory>
 
         {categories.map((category) => (
-          <GiftGrid
+          <GifGrid
             key={category}
             category={category}
             onRemoveCategory={onRemoveCategory}
-          ></GiftGrid>
+          ></GifGrid>
         ))}
     </div>
   )
 }
 
-export default GiftApp
+export default GifApp

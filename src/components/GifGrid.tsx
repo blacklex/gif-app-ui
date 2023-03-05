@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from 'react'
-import GiftCardItem from './GiftCardItem'
+import GifCardItem from './GifCardItem'
 
-interface GiftGridProps {
+interface GifGridProps {
   category: string
   onRemoveCategory: (category: string) => void
 }
 
-const getGifts = async (category: string) => {
+const getGifs = async (category: string) => {
   const url = `https://api.giphy.com/v1/gifs/search?api_key=L70bN6g1USOHalSl1fQ55SjChpuuDJgw&q=${category}&limit=10`
   const response = await fetch(url)
   const { data } = await response.json()
@@ -22,7 +22,7 @@ const getGifts = async (category: string) => {
   return images
 }
 
-const GiftGrid: FC<GiftGridProps> = ({ category, onRemoveCategory }) => {
+const GifGrid: FC<GifGridProps> = ({ category, onRemoveCategory }) => {
   const [images, setImages] = useState<
   Array<{
     id: string
@@ -31,7 +31,7 @@ const GiftGrid: FC<GiftGridProps> = ({ category, onRemoveCategory }) => {
   }>
   >([])
   useEffect(() => {
-    getGifts(category)
+    getGifs(category)
       .then((data) => {
         setImages(data)
       })
@@ -58,11 +58,11 @@ const GiftGrid: FC<GiftGridProps> = ({ category, onRemoveCategory }) => {
       </div>
       <div className="card-grid">
         {images.map((image) => (
-          <GiftCardItem key={image.id} {...image}></GiftCardItem>
+          <GifCardItem key={image.id} {...image}></GifCardItem>
         ))}
       </div>
     </div>
   )
 }
 
-export default GiftGrid
+export default GifGrid

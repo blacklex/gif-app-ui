@@ -1,13 +1,12 @@
 import { FC } from 'react'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface GiftCardItemProps {
+interface GifCardItemProps {
   id: string
   title: string
   url: string
 }
 
-const GiftCardItem: FC<GiftCardItemProps> = ({ title, url }) => {
+const GifCardItem: FC<GifCardItemProps> = ({ title, url }) => {
   return (
     <div className="card">
       <img src={url} alt={title}></img>
@@ -16,4 +15,4 @@ const GiftCardItem: FC<GiftCardItemProps> = ({ title, url }) => {
   )
 }
 
-export default GiftCardItem
+export default GifCardItem

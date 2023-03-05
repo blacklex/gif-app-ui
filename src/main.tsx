@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import GiftApp from './GiftApp'
+import GifApp from './GifApp'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <GiftApp />
+    <GifApp />
   </React.StrictMode>
 )
